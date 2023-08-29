@@ -1,0 +1,17 @@
+.Upload {
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 80px;
+}
+.file {
+    width: 300px;
+    height: 30px;
+    border: none;
+}
+
+.upload-button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3%;
+}

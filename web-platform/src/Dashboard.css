@@ -1,0 +1,72 @@
+.Dashboard {
+  text-align: center;
+}
+
+.body {
+  background-color: rgb(243, 248, 252);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Dashboard-link {
+  color: #61dafb;
+}
+
+@keyframes Dashboard-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.r-navbar {
+  display: flex;
+}
+
+.top-right {
+  position: absolute; 
+  width: 500px;
+  top: 0px;
+  right: 5px; 
+  height: 15%;
+  justify-content: space-evenly;
+  text-align: right;
+}
+
+.top-left {
+  position: absolute; 
+  top: 0px;
+  height: 15%;
+  left: 15px; 
+  text-align: left;
+}
+
+h3 {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-size: x-large;
+  color: rgba(39, 86, 125, 0.75);
+  border: 2px solid rgb(243, 248, 252);
+  border-radius: 5px;
+  padding-top: inherit;
+}
+
+h3:hover {
+  background-color: rgba(39, 86, 125, 0.75);
+  color: rgb(243, 248, 252);
+  transition-duration: 0.25s;
+}
+.datasets {
+  width: 400px;
+  position: absolute;
+  top: 20%;
+  left: 5px;
+}

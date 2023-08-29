@@ -1,0 +1,12 @@
+.plotButton {
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: "100%";
+}
+
+.plotButton:hover {
+    background-color: #E8AA42;
+    transition-duration: 0.25s;
+}

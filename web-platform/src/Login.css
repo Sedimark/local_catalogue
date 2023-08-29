@@ -1,0 +1,47 @@
+.credentials-form {
+    display: flex;
+    flex-direction: column;
+    height: 175px;
+    justify-content: space-evenly;
+    margin-left: 8%;
+    width: 90%;
+}
+
+input {
+    border-radius: 5px;
+    padding-left: 5px;
+    border: 1px solid rgba(39, 86, 125, 1);
+    width: 95%;
+    height: 40px;
+}
+
+.top {
+    margin-top: 5%;
+    color: rgba(39, 86, 125, 1);
+    text-align: center;
+}
+
+.loginButton {
+    margin-left: 25%;
+    width: 50%;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.loginButton:hover {
+    background-color: rgba(39, 86, 125, 1);
+    color: white;
+    transition-duration: 0.5s;
+}
+
+
+.Login {
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+    border-color: rgb(243, 248, 252);
+    background: rgba(39, 86, 125, 0.25);
+    width: 500px;
+    height: 300px;
+}

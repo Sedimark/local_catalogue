@@ -1,0 +1,38 @@
+.Details {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(243, 248, 252);
+}
+.Details h2 {
+    margin-top: 0px;
+    padding-top : 15px;
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    
+}
+table {
+    width: 300px;
+    border-collapse: collapse;
+    color: white;
+}
+table, th, td {
+    border: 2px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table-center {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.column {
+  flex: 33.33%;
+  margin-left: 2.5%;
+  margin-bottom: 2.5%;
+}
