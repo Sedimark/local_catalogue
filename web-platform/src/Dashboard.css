@@ -69,4 +69,5 @@ h3:hover {
   position: absolute;
   top: 20%;
   left: 5px;
+  text-align: left !important;
 }

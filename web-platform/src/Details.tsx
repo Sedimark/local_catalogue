@@ -6,9 +6,9 @@ import Navbar from "./Navbar";
 import ReusableTable from "./ReusableTable";
 
 export default function Details(props) {
-  const { id } = useParams();
-  const { state } = useLocation();
-  const [dataset, setDataset] = useState(null);
+  const { id } : any = useParams();
+  const { state } : any = useLocation();
+  const [dataset, setDataset] : any = useState(null);
   const [columns, setColumns] = useState(null);
   console.log(state)
   const readDataset = () => {
@@ -29,7 +29,9 @@ export default function Details(props) {
     }
     
   };
+  const triggerTrain = (dataset_name: string) => {
 
+  }
   useEffect(() => {
     readDataset();
   }, []);
@@ -37,11 +39,12 @@ export default function Details(props) {
   return (
    <>
     <Navbar></Navbar>
-    <div class="d-flex">
-      <div class="p-2" style={{marginLeft: "5%"}}>
+    <div className="d-flex">
+      <div className="p-2" style={{marginLeft: "5%", width: "15%"}}>
         <h2>Details about the dataset</h2>
-        <p>Name: {state ? state.name : "Loading..."}</p>
-        <p>Metadatas: </p>
+        <div style={{backgroundColor: "rgba(39, 86, 125, 0.25)", paddingLeft: "10px", marginTop: "5px", overflowX: "clip"}}>
+        <h4>Name: {state ? state.name : "Loading..."}</h4>
+        <h4>Metadatas: </h4>
         <div style={{marginLeft: "5%"}}>
         {
           state ?
@@ -52,7 +55,7 @@ export default function Details(props) {
             "Loading..."
         }
         </div>
-        <p>Tags: </p>
+        <h4>Tags: </h4>
         <div style={{marginLeft: "5%"}}>
         {
           state ?
@@ -63,9 +66,11 @@ export default function Details(props) {
             "Loading..."
         }
         </div>
+        <h3 style={{"width": "200px"}} onClick={() => triggerTrain(dataset.name)}> Trigger train </h3>  
+        </div>
       </div>
       
-      <div class="p-2 flex-grow-1" style={{marginLeft: "5%", marginRight: "1%"}}>
+      <div className="p-2 flex-grow-1" style={{marginLeft: "5%", marginRight: "1%"}}>
         <h2>Dataset table</h2>
         {
           dataset && state ? (

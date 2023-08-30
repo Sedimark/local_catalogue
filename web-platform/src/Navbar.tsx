@@ -21,12 +21,12 @@ export default function Navbar(props) {
     <>
       <MDBNavbar expand='lg' style={{top: "0", right: "0", left: "0", background: "rgba(39, 86, 125, 0.25)"}}>
       <MDBContainer fluid>
-        <h2 style={{color: "rgba(39, 86, 125, 1)"}} onClick={() => navigate('/')}> SEDIMARK Catalogue </h2>
+        <h2 style={{color: "rgba(39, 86, 125, 1)"}} onClick={() => navigate('/dashboard')}> SEDIMARK Catalogue </h2>
         <MDBCollapse navbar >
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             
           </MDBNavbarNav>
-          <div class="r-navbar">
+          <div className="r-navbar">
             {!props.loggedIn ? (
                 <>
               <h3 style={{"width": "200px"}} onClick={() => navigate('/login')}> Login </h3>  

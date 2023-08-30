@@ -17,11 +17,11 @@ const correlationDatasetImage = (dataset_name, col) => {
     .then(response => response.blob())
     .then(blob => {
         var blobURL = URL.createObjectURL(blob);
-        var image = document.getElementById(col);
-        image.onload = function(){
-            URL.revokeObjectURL(this.src); // release the blob URL once the image is loaded
+        var image = document.getElementById(col) as HTMLImageElement;
+        image!.onload = function(){
+            URL.revokeObjectURL(image.src); // release the blob URL once the image is loaded
         }
-        image.src = blobURL;
+        image!.src = blobURL;
     })
     .catch(error => {
         console.error(error);

@@ -26,14 +26,14 @@ export default function Login() {
       <Navbar></Navbar>
       <div className="body">
         <div className="Login">
-          <div class="form">
-            <div class="top">
+          <div className="form">
+            <div className="top">
               <h2> Login into the platform </h2>
             </div>
-            <div class="credentials-form">
+            <div className="credentials-form">
               <input type="text" placeholder='Username' id="username" onChange={(e) => { setUser(e.target.value) }} />
               <input type="password" placeholder='Password' id="password" onChange={(e) => { setPassword(e.target.value) }} />
-              <button className="loginButton" onClick={() => { login(user, password) }}>Login</button>
+              <button className="loginButton" onClick={() => { login() }}>Login</button>
             </div>
           </div>
         </div>
