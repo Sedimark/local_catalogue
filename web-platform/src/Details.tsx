@@ -10,20 +10,20 @@ export default function Details(props) {
   const { state } : any = useLocation();
   const [dataset, setDataset] : any = useState(null);
   const [columns, setColumns] = useState(null);
-  console.log(state)
+
   const readDataset = () => {
     let sessionDataset = sessionStorage.getItem(id);
     if(sessionDataset === null)
-      fetch("http://localhost:8000/get_dataset/"+id, {
-        method: "GET",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          let temp = JSON.parse(data["data"])
-          setDataset(temp);
-          console.log(temp)
-          sessionStorage.setItem(id, JSON.stringify(temp))
-        });
+        fetch("http://localhost:8000/get_dataset/"+id, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            let temp = JSON.parse(data["data"])
+            setDataset(temp);
+            console.log(temp)
+            sessionStorage.setItem(id, JSON.stringify(temp))
+          });
     else{
       setDataset(JSON.parse(sessionDataset))
     }
@@ -70,7 +70,7 @@ export default function Details(props) {
         </div>
       </div>
       
-      <div className="p-2 flex-grow-1" style={{marginLeft: "5%", marginRight: "1%"}}>
+      <div className="p-2 flex-grow-1" style={{marginLeft: "1%", marginRight: "1%"}}>
         <h2>Dataset table</h2>
         {
           dataset && state ? (
