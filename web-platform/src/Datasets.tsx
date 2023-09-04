@@ -12,7 +12,7 @@ export default function Datasets() {
     const getDatasets = () => {
         let sessionDatasets = sessionStorage.getItem("datasets");
         if (sessionDatasets === null)
-            fetch('http://localhost:8000/read_datasets', {
+            fetch('http://localhost:8000/read_global_datasets', {
                 method: 'GET',
 
             }).then(res => res.json()).then((data) => {

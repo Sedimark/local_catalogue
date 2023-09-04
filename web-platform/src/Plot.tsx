@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal, Button} from 'react-bootstrap';
 import "./Plot.css";
 
-const correlationDatasetImage = (dataset_name, col) => {
+const correlationDatasetImage = (dataset_name, col, url) => {
     fetch("http://localhost:8000/df_col_image", {
       method: "POST",
       headers: {
@@ -12,6 +12,7 @@ const correlationDatasetImage = (dataset_name, col) => {
       body: JSON.stringify({
         'column': col,
         'dataset_name': dataset_name,
+        'url': url
       }),
     })
     .then(response => response.blob())
@@ -33,7 +34,7 @@ export default function Plot(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
-    correlationDatasetImage(props.dataset_name, props.col);
+    correlationDatasetImage(props.state.name, props.col, props.state["metadata"]["Source"]);
   }
 
   return (

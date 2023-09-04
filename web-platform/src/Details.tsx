@@ -14,8 +14,15 @@ export default function Details(props) {
   const readDataset = () => {
     let sessionDataset = sessionStorage.getItem(id);
     if(sessionDataset === null)
-        fetch("http://localhost:8000/get_dataset/"+id, {
-          method: "GET",
+        fetch("http://localhost:8000/get_dataset/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            url: state["metadata"]["Source"],
+            name: state.name
+          })
         })
           .then((res) => res.json())
           .then((data) => {
@@ -74,7 +81,7 @@ export default function Details(props) {
         <h2>Dataset table</h2>
         {
           dataset && state ? (
-            <ReusableTable data={dataset} dataset_name={state.name}></ReusableTable>
+            <ReusableTable data={dataset} state={state}></ReusableTable>
           ) : (
             <></>
           )

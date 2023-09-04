@@ -11,7 +11,7 @@ import Plot from "./Plot";
 export default function ReusableTable(props) {
   console.log(Object.keys(props.data));
   const [data, setData] = useState(props.data);
-  const [dataset_name, setDatasetName] = useState(props.dataset_name)
+  const [state, setState] = useState(props.state)
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(20);
   const [modalShow, setModalShow] = React.useState(false);
@@ -26,7 +26,7 @@ export default function ReusableTable(props) {
 
   return (
     <div style={{ backgroundColor: bkgColor, color: "white" }}>
-      {data && dataset_name ? (
+      {data && state.name ? (
         <>
           <TableContainer
             component={Paper}
@@ -47,7 +47,7 @@ export default function ReusableTable(props) {
                           show={modalShow}
                           onHide={() => setModalShow(false)}
                           col={e}
-                          dataset_name={dataset_name}
+                          state={state}
                         >
                           {e}
                         </Plot>
