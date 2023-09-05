@@ -93,10 +93,14 @@ export default function Datasets() {
     }
 
     const searchDatasets = (dataset_name) => {
-        let temp = currentDatasets.filter((dataset: any) => {
-            return dataset.name.includes(dataset_name)
-        })
-        setCurrentDatasets(temp)
+        if(dataset_name === "")
+            setCurrentDatasets(datasets)
+        else{
+            let temp = currentDatasets.filter((dataset: any) => {
+                return dataset.name.includes(dataset_name)
+            })
+            setCurrentDatasets(temp)
+        }
     }
 
     const cleanFilters = () => {
@@ -116,11 +120,12 @@ export default function Datasets() {
                 <h2> Available datasets </h2>
             </div>
             <div style={{ display: "flex" }}>
-                <div className="p-2" style={{ marginLeft: "5%", borderRadius: "5px", width: "15%", backgroundColor: "rgba(39, 86, 125, 0.25)" }}>
+                <div className="p-2" style={{ marginLeft: "5%", borderRadius: "10px", width: "15%", backgroundColor: "rgba(39, 86, 125, 0.25)" }}>
                     <h2>Search</h2>
                     <input id="searchBar" type="text" style={{ marginBottom: "2%" }} onChange={(e) => searchDatasets(e.target.value)}>
-
                     </input>
+                    <button type="button" className="btn btn-primary fs-5 mb-2 mt-2" style={{alignItems: ""}} onClick={() => cleanFilters()}> Reset filters</button>
+
                     <h2>Filters</h2>
                     <ul style={{ textAlign: "left" }}>
                         {
@@ -154,9 +159,6 @@ export default function Datasets() {
                             </>)
                         }
                     </ul>
-                    <h3 style={{width: "80%"}} onClick={() => cleanFilters()}>
-                        Reset filters
-                    </h3>
                 </div>
                 <div className="p-2 flex-grow-1" style={{ marginLeft: "5%", marginRight: "1%", textAlign: "left" }}>
 

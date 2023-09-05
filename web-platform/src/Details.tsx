@@ -49,7 +49,7 @@ export default function Details(props) {
     <div className="d-flex">
       <div className="p-2" style={{marginLeft: "5%", width: "15%"}}>
         <h2>Details about the dataset</h2>
-        <div style={{backgroundColor: "rgba(39, 86, 125, 0.25)", paddingLeft: "10px", marginTop: "5px", overflowX: "clip"}}>
+        <div style={{backgroundColor: "rgba(39, 86, 125, 0.25)", paddingLeft: "10px", borderRadius: "10px", marginTop: "5px", overflowX: "clip"}}>
         <h4>Name: {state ? state.name : "Loading..."}</h4>
         <h4>Metadatas: </h4>
         <div style={{marginLeft: "5%"}}>
@@ -73,7 +73,7 @@ export default function Details(props) {
             "Loading..."
         }
         </div>
-        <h3 style={{"width": "200px"}} onClick={() => triggerTrain(dataset.name)}> Trigger train </h3>  
+        <button type="button" className="btn btn-primary fs-5 mb-3" onClick={() => triggerTrain(dataset.name)}> Trigger train </button>  
         </div>
       </div>
       
