@@ -2,3 +2,5 @@ datasets/*
 api/__pycache__/*
 *.ipynb
 *.jsonld
+.vite
+.vscode
